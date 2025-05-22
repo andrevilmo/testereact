@@ -95,24 +95,7 @@ builder.Services.AddSwaggerGen(setup =>
 });
 var app = builder.Build();
 //app.UseHttpsRedirection();
-/*
-builder.Services.AddDirectoryBrowser();
-app.UseFileServer(new FileServerOptions
-{
-    FileProvider = new PhysicalFileProvider(
-           Path.Combine(builder.Environment.ContentRootPath, "web")),
-    RequestPath = "/web",
-    EnableDirectoryBrowsing = true
-});*/
-/*
-var options = new DefaultFilesOptions();
-options.DefaultFileNames.Clear();
-options.DefaultFileNames.Add("index.html");
-app.UseDefaultFiles(options);
 
-app.UseDefaultFiles();*/
-
-//app.UseFileServer();
 app.UseMiddleware<AuthenticationMiddleware>();
  app.Use(async (context, next) =>
  {
@@ -126,19 +109,7 @@ app.UseMiddleware<AuthenticationMiddleware>();
     }
  });
  app.UseStaticFiles();
- //******************   we need the code below *****************************
-var fileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "backend","wwwroot"));
 
-var options = new FileServerOptions
-{
-    FileProvider = fileProvider,
-    RequestPath = "/web",
-    EnableDirectoryBrowsing = true
-};
-
-app.UseFileServer(options);
-
-//******************   we need the code above *****************************
 /*
 app.UseSpa(spa =>
 {

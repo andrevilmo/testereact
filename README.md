@@ -1,3 +1,45 @@
+# Exemplo criado apartir do framework de criação de projetos React
+
+# 1 . Instruções para rodar
+
+# 1 . 1 Pré requisitos
+    - SQL SERVER
+    - node versão >=10
+    - dotnet sdk versão 9
+    - dotnet runtime versão 9
+    - executar navegador com CORS security desabilitado Ex Chrome.: "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security  --user-data-dir="C:\temp"
+
+
+# 1 . 2 Para rodar o front
+    Verificar o caminho do backend e colocar o apontamento correto em src\constants\apiConstants.js na constante API_BASE_URL.
+    É necessário instalar as bibliotecas react com o comando "npm install".
+    Após é só executar normalmente "npm run start".
+
+# 1 . 3 Para rodar o backend
+    Basta executar "npm run backend"
+
+# 1 . 3 Interação
+    No navegador, digitar http://localhost:3000/
+    Haverá a tela de login e o botão de register, caso queira cadastrar o usuario e senha
+    Em caso de login positivo, redireciona para a página de home
+    Em caso de erro, simplesmente mostra a mensagem
+
+# 1 . 4 Considerações
+    - Foi criado com padrão de arquitetura Service Pattern e o Repository Pattern
+    - É utilizado injeção de dependência
+    - É utilizado validação por JWT Token bearer
+    - A aplicação poderia ser mais elaborada, mas foi focada na demonstração das habilidades:
+        - Uso de CRUD em Rest/API
+        - Codificação em React
+        - Codificação com arquiteturas em C#
+        - Autenticação e Autorização
+
+        Poderia aplicar mais algumas boas práticas como : 
+        - Desgin pattern mediator
+        - Uso de bancos de cache, como Redis
+        - Mais logs em pontos estratégicos
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +110,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
